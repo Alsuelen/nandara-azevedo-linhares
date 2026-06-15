@@ -19,20 +19,28 @@
 html { scroll-behavior:smooth; }
 body { font-family:'DM Sans',sans-serif; color:var(--ink); background:#fff; }
 nav { position:fixed; top:0; width:100%; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 6%; height:64px; background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
-.nav-brand { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-style:italic; color:var(--ink); letter-spacing:0.01em; }
+.nav-brand { display:flex; align-items:center; gap:.75rem; text-decoration:none; }
+.nav-logo-mark { width:38px; height:38px; flex-shrink:0; }
+.nav-brand-text { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--ink); letter-spacing:0.01em; line-height:1.2; }
+.nav-brand-text span { display:block; font-family:'DM Sans',sans-serif; font-style:normal; font-size:0.62rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; font-weight:400; }
 .nav-cro { font-size:0.72rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
 .nav-wa { background:var(--rose); color:#fff; padding:.45rem 1.2rem; border-radius:4px; text-decoration:none; font-size:0.82rem; font-weight:500; }
-.hero { height:100vh; min-height:640px; position:relative; overflow:hidden; }
-.hero-img { position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e66?w=1600&q=90') center/cover no-repeat; }
-.hero-img::after { content:''; position:absolute; inset:0; background:linear-gradient(160deg, rgba(26,10,15,0.75) 0%, rgba(157,23,77,0.4) 100%); }
-.hero-inner { position:relative; z-index:2; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding:0 8% 8rem; }
+.hero { height:100vh; min-height:640px; position:relative; overflow:hidden; background:linear-gradient(135deg, #1a0a0f 0%, #3b1320 50%, #6b2340 100%); }
+.hero-inner { position:relative; z-index:2; height:100%; display:grid; grid-template-columns:1fr 1fr; align-items:center; padding:0 8%; gap:3rem; padding-top:64px; }
+.hero-left { display:flex; flex-direction:column; justify-content:center; }
 .hero-pretitle { color:rgba(255,255,255,0.6); font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.2rem; }
-.hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,6vw,5.5rem); color:#fff; line-height:1.05; font-weight:400; max-width:700px; margin-bottom:2rem; }
+.hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,4.5vw,4.8rem); color:#fff; line-height:1.05; font-weight:400; margin-bottom:2rem; }
 .hero-title em { font-style:italic; color:#f9a8d4; }
 .hero-line { width:56px; height:1px; background:rgba(255,255,255,0.4); margin-bottom:1.5rem; }
 .hero-sub { color:rgba(255,255,255,0.8); font-size:1rem; max-width:400px; line-height:1.7; margin-bottom:2.5rem; font-weight:300; }
 .hero-cta { display:inline-flex; align-items:center; gap:.8rem; color:#fff; text-decoration:none; font-size:0.88rem; font-weight:500; border-bottom:1px solid rgba(255,255,255,0.4); padding-bottom:.3rem; transition:border-color .2s; width:fit-content; }
-.hero-cta:hover { border-color:#fff; }
+.hero-right { display:flex; align-items:center; justify-content:center; position:relative; }
+.hero-circle-wrap { position:relative; width:420px; height:420px; flex-shrink:0; }
+.hero-circle { width:100%; height:100%; border-radius:50%; overflow:hidden; border:2px solid rgba(249,168,212,0.35); box-shadow:0 0 0 12px rgba(249,168,212,0.08), 0 0 0 24px rgba(249,168,212,0.04); }
+.hero-circle img { width:100%; height:100%; object-fit:cover; }
+.hero-float-card { position:absolute; bottom:-1.5rem; left:-2rem; background:rgba(255,255,255,0.95); padding:1.2rem 1.6rem; border-left:3px solid var(--rose); min-width:200px; }
+.hero-float-card .fc-num { font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--rose); line-height:1; }
+.hero-float-card .fc-label { font-size:0.72rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; margin-top:.2rem; }
 .hero-scroll { position:absolute; right:5%; bottom:3rem; z-index:2; display:flex; flex-direction:column; align-items:center; gap:.6rem; color:rgba(255,255,255,0.5); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; }
 .scroll-line { width:1px; height:48px; background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.4)); }
 .sobre { padding:7rem 8%; }
@@ -52,7 +60,7 @@ nav { position:fixed; top:0; width:100%; z-index:100; display:flex; align-items:
 .esp-header { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:4rem; border-bottom:1px solid var(--line); padding-bottom:2rem; }
 .esp-header h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:400; }
 .esp-header p { font-size:0.78rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
-.esp-item { display:flex; align-items:baseline; justify-content:space-between; padding:1.8rem 0; border-bottom:1px solid var(--line); cursor:default; transition:padding .2s; }
+.esp-item { display:flex; align-items:baseline; justify-content:space-between; padding:1.8rem 0; border-bottom:1px solid var(--line); transition:padding .2s; }
 .esp-item:hover { padding-left:1rem; }
 .esp-item-left { display:flex; align-items:baseline; gap:2rem; }
 .esp-num { font-family:'Cormorant Garamond',serif; font-size:0.85rem; color:var(--rose2); font-style:italic; }
@@ -88,23 +96,44 @@ footer strong { color:rgba(255,255,255,0.7); }
   .esp-desc { display:none; }
   .endereco-card { position:static; transform:none; max-width:100%; box-shadow:none; border-top:3px solid var(--rose); }
   nav .nav-cro { display:none; }
+  .hero-inner { grid-template-columns:1fr; }
+  .hero-right { display:none; }
 }
 </style>
 </head>
 <body>
 <nav>
-  <div class="nav-brand">Dra. Nandara Azevedo</div>
-  <span class="nav-cro">Cirurgiã-Dentista · CRO 10890 ES</span>
+  <a href="#" class="nav-brand">
+    <svg class="nav-logo-mark" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="19" cy="19" r="17.5" stroke="#9d174d" stroke-width="1.2"/>
+      <circle cx="19" cy="19" r="12" stroke="#9d174d" stroke-width="0.5" opacity="0.35"/>
+      <text x="19" y="25" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-style="italic" fill="#9d174d">N</text>
+    </svg>
+    <div class="nav-brand-text">Dra. Nandara Azevedo<span>Cirurgiã-Dentista</span></div>
+  </a>
+  <span class="nav-cro">CRO 10890 ES</span>
   <a href="https://wa.me/5527999883800" class="nav-wa">Agendar</a>
 </nav>
 <section class="hero">
-  <div class="hero-img"></div>
   <div class="hero-inner">
-    <p class="hero-pretitle">Linhares · ES · Cirurgiã-Dentista</p>
-    <div class="hero-line"></div>
-    <h1 class="hero-title">Desenvolvo sorrisos que revelam <em>sua essência</em></h1>
-    <p class="hero-sub">Odontologia com escuta ativa, técnica refinada e um olhar estético que respeita quem você é.</p>
-    <a href="https://wa.me/5527999883800" class="hero-cta">Agendar consulta pelo WhatsApp →</a>
+    <div class="hero-left">
+      <p class="hero-pretitle">Linhares · ES · Cirurgiã-Dentista</p>
+      <div class="hero-line"></div>
+      <h1 class="hero-title">Desenvolvo sorrisos que revelam <em>sua essência</em></h1>
+      <p class="hero-sub">Odontologia com escuta ativa, técnica refinada e um olhar estético que respeita quem você é.</p>
+      <a href="https://wa.me/5527999883800" class="hero-cta">Agendar consulta pelo WhatsApp →</a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-circle-wrap">
+        <div class="hero-circle">
+          <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=90" alt="Consultório Dra. Nandara Azevedo">
+        </div>
+        <div class="hero-float-card">
+          <div class="fc-num">1.7K</div>
+          <div class="fc-label">Seguidores · @nandaraazevedo</div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div>scroll</div>
 </section>
@@ -127,35 +156,14 @@ footer strong { color:rgba(255,255,255,0.7); }
 </section>
 <section class="esp" id="especialidades">
   <div class="esp-inner">
-    <div class="esp-header">
-      <h2>Tratamentos</h2>
-      <p>O que oferecemos</p>
-    </div>
+    <div class="esp-header"><h2>Tratamentos</h2><p>O que oferecemos</p></div>
     <div class="esp-list">
-      <div class="esp-item">
-        <div class="esp-item-left"><span class="esp-num">01</span><span class="esp-name">Estética Dental</span></div>
-        <p class="esp-desc">Harmonização do sorriso com técnicas modernas e resultado natural.</p>
-      </div>
-      <div class="esp-item">
-        <div class="esp-item-left"><span class="esp-num">02</span><span class="esp-name">Clareamento Dental</span></div>
-        <p class="esp-desc">Dentes mais brancos com segurança e eficácia comprovada.</p>
-      </div>
-      <div class="esp-item">
-        <div class="esp-item-left"><span class="esp-num">03</span><span class="esp-name">Lentes de Contato</span></div>
-        <p class="esp-desc">Facetas ultrafinas que transformam forma, cor e tamanho.</p>
-      </div>
-      <div class="esp-item">
-        <div class="esp-item-left"><span class="esp-num">04</span><span class="esp-name">Implantes Dentários</span></div>
-        <p class="esp-desc">Solução definitiva e natural para dentes perdidos.</p>
-      </div>
-      <div class="esp-item">
-        <div class="esp-item-left"><span class="esp-num">05</span><span class="esp-name">Ortodontia</span></div>
-        <p class="esp-desc">Alinhamento com aparelhos fixos ou transparentes.</p>
-      </div>
-      <div class="esp-item">
-        <div class="esp-item-left"><span class="esp-num">06</span><span class="esp-name">Clínico Geral</span></div>
-        <p class="esp-desc">Diagnóstico, prevenção e cuidados de rotina para toda a família.</p>
-      </div>
+      <div class="esp-item"><div class="esp-item-left"><span class="esp-num">01</span><span class="esp-name">Estética Dental</span></div><p class="esp-desc">Harmonização do sorriso com técnicas modernas e resultado natural.</p></div>
+      <div class="esp-item"><div class="esp-item-left"><span class="esp-num">02</span><span class="esp-name">Clareamento Dental</span></div><p class="esp-desc">Dentes mais brancos com segurança e eficácia comprovada.</p></div>
+      <div class="esp-item"><div class="esp-item-left"><span class="esp-num">03</span><span class="esp-name">Lentes de Contato</span></div><p class="esp-desc">Facetas ultrafinas que transformam forma, cor e tamanho.</p></div>
+      <div class="esp-item"><div class="esp-item-left"><span class="esp-num">04</span><span class="esp-name">Implantes Dentários</span></div><p class="esp-desc">Solução definitiva e natural para dentes perdidos.</p></div>
+      <div class="esp-item"><div class="esp-item-left"><span class="esp-num">05</span><span class="esp-name">Ortodontia</span></div><p class="esp-desc">Alinhamento com aparelhos fixos ou transparentes.</p></div>
+      <div class="esp-item"><div class="esp-item-left"><span class="esp-num">06</span><span class="esp-name">Clínico Geral</span></div><p class="esp-desc">Diagnóstico, prevenção e cuidados de rotina para toda a família.</p></div>
     </div>
   </div>
 </section>
