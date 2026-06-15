@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Nandara Azevedo | Dentista | Linhares-ES</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose: #9d174d;
+  --rose2: #be185d;
+  --rose-pale: #fff1f5;
+  --ink: #1a0a0f;
+  --ink2: #3b1320;
+  --muted: #7c6672;
+  --line: #f0dde5;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; color:var(--ink); background:#fff; }
+nav { position:fixed; top:0; width:100%; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 6%; height:64px; background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+.nav-brand { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-style:italic; color:var(--ink); letter-spacing:0.01em; }
+.nav-cro { font-size:0.72rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+.nav-wa { background:var(--rose); color:#fff; padding:.45rem 1.2rem; border-radius:4px; text-decoration:none; font-size:0.82rem; font-weight:500; }
+.hero { height:100vh; min-height:640px; position:relative; overflow:hidden; }
+.hero-img { position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e66?w=1600&q=90') center/cover no-repeat; }
+.hero-img::after { content:''; position:absolute; inset:0; background:linear-gradient(160deg, rgba(26,10,15,0.75) 0%, rgba(157,23,77,0.4) 100%); }
+.hero-inner { position:relative; z-index:2; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding:0 8% 8rem; }
+.hero-pretitle { color:rgba(255,255,255,0.6); font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.2rem; }
+.hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,6vw,5.5rem); color:#fff; line-height:1.05; font-weight:400; max-width:700px; margin-bottom:2rem; }
+.hero-title em { font-style:italic; color:#f9a8d4; }
+.hero-line { width:56px; height:1px; background:rgba(255,255,255,0.4); margin-bottom:1.5rem; }
+.hero-sub { color:rgba(255,255,255,0.8); font-size:1rem; max-width:400px; line-height:1.7; margin-bottom:2.5rem; font-weight:300; }
+.hero-cta { display:inline-flex; align-items:center; gap:.8rem; color:#fff; text-decoration:none; font-size:0.88rem; font-weight:500; border-bottom:1px solid rgba(255,255,255,0.4); padding-bottom:.3rem; transition:border-color .2s; width:fit-content; }
+.hero-cta:hover { border-color:#fff; }
+.hero-scroll { position:absolute; right:5%; bottom:3rem; z-index:2; display:flex; flex-direction:column; align-items:center; gap:.6rem; color:rgba(255,255,255,0.5); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; }
+.scroll-line { width:1px; height:48px; background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.4)); }
+.sobre { padding:7rem 8%; }
+.sobre-inner { display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; max-width:1100px; margin:0 auto; }
+.sobre-label { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--rose2); margin-bottom:2rem; display:flex; align-items:center; gap:1rem; }
+.sobre-label::after { content:''; flex:1; height:1px; background:var(--line); }
+.sobre-quote { font-family:'Cormorant Garamond',serif; font-size:clamp(1.6rem,2.5vw,2.2rem); line-height:1.35; font-style:italic; color:var(--ink); margin-bottom:2rem; }
+.sobre-body { font-size:0.9rem; color:var(--muted); line-height:1.9; margin-bottom:1.5rem; font-weight:300; }
+.sobre-cro { display:inline-flex; align-items:center; gap:.5rem; font-size:0.78rem; color:var(--rose); font-weight:500; margin-top:.5rem; }
+.sobre-cro::before { content:''; width:20px; height:1px; background:var(--rose2); }
+.sobre-img-side { position:relative; }
+.sobre-img-wrap { border-radius:4px; overflow:hidden; height:560px; }
+.sobre-img-wrap img { width:100%; height:100%; object-fit:cover; }
+.sobre-tag-float { position:absolute; bottom:-1.5rem; left:-1.5rem; background:var(--rose); color:#fff; padding:1.2rem 1.8rem; font-size:0.78rem; font-weight:500; line-height:1.5; }
+.esp { padding:7rem 8%; background:var(--rose-pale); }
+.esp-inner { max-width:1000px; margin:0 auto; }
+.esp-header { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:4rem; border-bottom:1px solid var(--line); padding-bottom:2rem; }
+.esp-header h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:400; }
+.esp-header p { font-size:0.78rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+.esp-item { display:flex; align-items:baseline; justify-content:space-between; padding:1.8rem 0; border-bottom:1px solid var(--line); cursor:default; transition:padding .2s; }
+.esp-item:hover { padding-left:1rem; }
+.esp-item-left { display:flex; align-items:baseline; gap:2rem; }
+.esp-num { font-family:'Cormorant Garamond',serif; font-size:0.85rem; color:var(--rose2); font-style:italic; }
+.esp-name { font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,2.2vw,1.8rem); font-weight:400; color:var(--ink); }
+.esp-desc { font-size:0.8rem; color:var(--muted); max-width:320px; text-align:right; line-height:1.6; }
+.stats { padding:5rem 8%; background:var(--rose); }
+.stats-inner { max-width:900px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.stat-col { padding:2rem 3rem; background:var(--rose); text-align:center; }
+.stat-num { font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,4vw,4rem); color:#fff; font-weight:400; line-height:1; margin-bottom:.5rem; }
+.stat-label { font-size:0.75rem; color:rgba(255,255,255,0.7); letter-spacing:0.1em; text-transform:uppercase; }
+.cta { padding:7rem 8%; text-align:center; }
+.cta-inner { max-width:600px; margin:0 auto; }
+.cta-label { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; }
+.cta h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:400; line-height:1.2; margin-bottom:2.5rem; }
+.cta h2 em { font-style:italic; color:var(--rose2); }
+.cta-btn { display:inline-block; background:var(--ink); color:#fff; padding:1rem 3rem; text-decoration:none; font-size:0.85rem; letter-spacing:0.05em; transition:background .2s; }
+.cta-btn:hover { background:var(--rose); }
+.endereco { position:relative; }
+.map-full { width:100%; height:420px; display:block; border:none; filter:grayscale(20%); }
+.endereco-card { position:absolute; top:50%; left:8%; transform:translateY(-50%); background:#fff; padding:2.5rem; max-width:320px; box-shadow:0 4px 40px rgba(0,0,0,0.12); }
+.endereco-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; margin-bottom:1.2rem; }
+.e-row { display:flex; gap:.8rem; margin-bottom:1rem; font-size:0.85rem; color:var(--muted); }
+.e-row strong { color:var(--ink); display:block; font-size:0.78rem; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:.2rem; }
+.e-wa { display:block; margin-top:1.5rem; background:var(--rose); color:#fff; text-align:center; padding:.8rem; text-decoration:none; font-size:0.85rem; font-weight:500; }
+footer { background:var(--ink2); color:rgba(255,255,255,0.45); text-align:center; padding:2rem; font-size:0.78rem; }
+footer strong { color:rgba(255,255,255,0.7); }
+.wa-btn { position:fixed; bottom:2rem; right:2rem; z-index:999; width:56px; height:56px; background:#25d366; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 16px rgba(37,211,102,0.4); }
+.wa-btn svg { width:28px; height:28px; fill:#fff; }
+@media(max-width:768px){
+  .sobre-inner,.stats-inner { grid-template-columns:1fr; }
+  .sobre-img-wrap { height:320px; }
+  .sobre-tag-float { display:none; }
+  .esp-desc { display:none; }
+  .endereco-card { position:static; transform:none; max-width:100%; box-shadow:none; border-top:3px solid var(--rose); }
+  nav .nav-cro { display:none; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Dra. Nandara Azevedo</div>
+  <span class="nav-cro">Cirurgiã-Dentista · CRO 10890 ES</span>
+  <a href="https://wa.me/5527999883800" class="nav-wa">Agendar</a>
+</nav>
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-inner">
+    <p class="hero-pretitle">Linhares · ES · Cirurgiã-Dentista</p>
+    <div class="hero-line"></div>
+    <h1 class="hero-title">Desenvolvo sorrisos que revelam <em>sua essência</em></h1>
+    <p class="hero-sub">Odontologia com escuta ativa, técnica refinada e um olhar estético que respeita quem você é.</p>
+    <a href="https://wa.me/5527999883800" class="hero-cta">Agendar consulta pelo WhatsApp →</a>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>scroll</div>
+</section>
+<section class="sobre" id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-text-side">
+      <div class="sobre-label">Sobre a dentista</div>
+      <p class="sobre-quote">"Cada sorriso conta uma história única — meu trabalho é revelá-la."</p>
+      <p class="sobre-body">Sou Nandara Azevedo, cirurgiã-dentista apaixonada por transformar sorrisos com cuidado, escuta e intenção. Atendo em Linhares há anos, com uma abordagem que une técnica contemporânea e sensibilidade humana.</p>
+      <p class="sobre-body">No meu consultório, você nunca é um caso clínico — você é uma pessoa com objetivos, medos e sonhos. Cada plano de tratamento é construído com você, não para você.</p>
+      <div class="sobre-cro">CRO 10890 ES — Registro ativo no Conselho</div>
+    </div>
+    <div class="sobre-img-side">
+      <div class="sobre-img-wrap">
+        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=90" alt="Consultório Dra. Nandara">
+      </div>
+      <div class="sobre-tag-float">Av. Filogônio Peixoto, 1624<br>Bairro Aviso · Linhares, ES</div>
+    </div>
+  </div>
+</section>
+<section class="esp" id="especialidades">
+  <div class="esp-inner">
+    <div class="esp-header">
+      <h2>Tratamentos</h2>
+      <p>O que oferecemos</p>
+    </div>
+    <div class="esp-list">
+      <div class="esp-item">
+        <div class="esp-item-left"><span class="esp-num">01</span><span class="esp-name">Estética Dental</span></div>
+        <p class="esp-desc">Harmonização do sorriso com técnicas modernas e resultado natural.</p>
+      </div>
+      <div class="esp-item">
+        <div class="esp-item-left"><span class="esp-num">02</span><span class="esp-name">Clareamento Dental</span></div>
+        <p class="esp-desc">Dentes mais brancos com segurança e eficácia comprovada.</p>
+      </div>
+      <div class="esp-item">
+        <div class="esp-item-left"><span class="esp-num">03</span><span class="esp-name">Lentes de Contato</span></div>
+        <p class="esp-desc">Facetas ultrafinas que transformam forma, cor e tamanho.</p>
+      </div>
+      <div class="esp-item">
+        <div class="esp-item-left"><span class="esp-num">04</span><span class="esp-name">Implantes Dentários</span></div>
+        <p class="esp-desc">Solução definitiva e natural para dentes perdidos.</p>
+      </div>
+      <div class="esp-item">
+        <div class="esp-item-left"><span class="esp-num">05</span><span class="esp-name">Ortodontia</span></div>
+        <p class="esp-desc">Alinhamento com aparelhos fixos ou transparentes.</p>
+      </div>
+      <div class="esp-item">
+        <div class="esp-item-left"><span class="esp-num">06</span><span class="esp-name">Clínico Geral</span></div>
+        <p class="esp-desc">Diagnóstico, prevenção e cuidados de rotina para toda a família.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat-col"><div class="stat-num">1.7K</div><div class="stat-label">Seguidores no Instagram</div></div>
+    <div class="stat-col"><div class="stat-num">100%</div><div class="stat-label">Foco no paciente</div></div>
+    <div class="stat-col"><div class="stat-num">CRO<br><span style="font-size:2rem">10890</span></div><div class="stat-label">Registro ativo ES</div></div>
+  </div>
+</section>
+<section class="cta" id="cta">
+  <div class="cta-inner">
+    <p class="cta-label">Próximo passo</p>
+    <h2>Pronta para revelar o sorriso que é <em>seu de verdade?</em></h2>
+    <a href="https://wa.me/5527999883800" class="cta-btn">Agendar pelo WhatsApp</a>
+  </div>
+</section>
+<section class="endereco" id="endereco">
+  <iframe class="map-full" src="https://maps.google.com/maps?q=Av.+Filog%C3%B4nio+Peixoto,+1624,+Linhares,+ES&output=embed" loading="lazy"></iframe>
+  <div class="endereco-card">
+    <h3>Onde estamos</h3>
+    <div class="e-row"><div><strong>Endereço</strong>Av. Filogônio Peixoto, 1624<br>Bairro Aviso · Linhares, ES</div></div>
+    <div class="e-row"><div><strong>WhatsApp</strong>(27) 99988-3800</div></div>
+    <div class="e-row"><div><strong>Horários</strong>Seg–Sex 08h–18h · Sáb 08h–12h</div></div>
+    <a href="https://wa.me/5527999883800" class="e-wa">Falar pelo WhatsApp</a>
+  </div>
+</section>
+<footer>
+  <strong>Dra. Nandara Azevedo</strong> · Cirurgiã-Dentista · CRO 10890 ES<br>
+  Av. Filogônio Peixoto, 1624 — Bairro Aviso, Linhares, ES
+</footer>
+<a href="https://wa.me/5527999883800" class="wa-btn">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.854L.057 23.667a.5.5 0 0 0 .611.612l5.815-1.471A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.867 9.867 0 0 1-5.03-1.378l-.36-.214-3.733.945.978-3.63-.234-.372A9.867 9.867 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1c5.467 0 9.9 4.433 9.9 9.9 0 5.467-4.433 9.9-9.9 9.9z"/></svg>
+</a>
+</body>
+</html>
